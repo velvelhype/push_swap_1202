@@ -50,7 +50,7 @@ void    check_stack(t_list *head)
     head = head->next;
     while(head->is_dummy == FALSE)
     {
-        fprintf(stderr, "%d\n",head->value);
+        fprintf(stderr, "%ld\n",head->value);
         head = head->next;
     }
     char buf[10];
@@ -62,7 +62,7 @@ void    check_stack_r(t_list *head)
     head = head->prev;
     while(head->is_dummy == FALSE)
     {
-        fprintf(stderr, "%d\n",head->value);
+        fprintf(stderr, "%ld\n",head->value);
         head = head->prev;
     }
 }
@@ -74,7 +74,7 @@ void    check_link(t_list *head)
     head = head->prev;
     while(c--)
     {
-        fprintf(stderr, "%d\n",head->value);
+        fprintf(stderr, "%ld\n",head->value);
         head = head->prev;
     }
 }

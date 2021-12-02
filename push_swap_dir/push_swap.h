@@ -15,20 +15,26 @@ typedef struct t_list
 {
     struct t_list *next;
     struct t_list *prev;
-    int value;
+    long value;
     int is_dummy;
     int sort_status;
 } t_list;
 
 
-//pre_process
-void    pre_process(int argc, char **argv);
+//pre_error_check
+void    error_case();
+void    pre_error_check(int argc, char **argv);
+long    custom_atoi(const char *str);
 
 //preparetions
 t_list* append();
 t_list* prepare_a_list(int argc, char ** argv, t_list *a_head);
 t_list* prepare_b_list(t_list *b_head);
 void    tend_values(int len, t_list* list, t_list *ranking);
+
+//post_process
+void    check_duplicates(t_list *list);
+
 
 //controls
 void    swap(t_list* head);

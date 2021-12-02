@@ -15,7 +15,7 @@ CC = gcc
 CFLAGS = -Werror -Wall -Wextra
 CFLAGS =
 SRCS = checks.c \
-pre_process.c \
+pre_error_check.c \
 controls.c \
 prepare_list.c \
 push_swap.c \

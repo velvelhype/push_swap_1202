@@ -42,6 +42,8 @@ void    digit_check(char **argv, int c)
 void    value_type_check(char **argv, int c)
 {
     int i = 0;
+    if(*(*(argv + c) + i) == '\0')
+        error_case();
     if(*(*(argv + c) + i) == '-')
         i++;
     while(*(*(argv + c) + i))
@@ -67,7 +69,6 @@ void    pre_error_check(int argc, char **argv)
         value_type_check(argv, c);
         c++;
     }
-    
 }
 
 void    check_duplicates(t_list *list)

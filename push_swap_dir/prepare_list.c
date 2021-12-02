@@ -20,9 +20,11 @@ t_list* prepare_a_list(int argc, char **argv, t_list *a_head)
     while(argc-- - 1)
     {
         a_head->next = malloc(sizeof(t_list));
+        if(!a_head->next)
+            error_case();
         (a_head->next)->prev = a_head;
         (a_head->next)->is_dummy = FALSE;
-        (a_head->next)->value = ft_atoi(argv[count - argc]);
+        (a_head->next)->value = custom_atoi(argv[count - argc]);
         a_head = a_head->next;
     }
     a_head->next = a_ori;
