@@ -46,6 +46,8 @@ void    value_type_check(char **argv, int c)
         error_case();
     if(*(*(argv + c) + i) == '-')
         i++;
+    if(*(*(argv + c) + i) == '\0')
+        error_case();
     while(*(*(argv + c) + i))
     {
         if(ft_isdigit(*(*(argv + c) + i)) == FALSE)
@@ -60,8 +62,6 @@ void    pre_error_check(int argc, char **argv)
 {
     if(argc < 2)
         error_case();
-    if(argc == 2)
-        exit(0);
     int c = 1;
     while(*(argv + c))
     {
